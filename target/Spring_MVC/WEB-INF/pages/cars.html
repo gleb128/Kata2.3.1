@@ -5,6 +5,28 @@
     <title>List of cars</title>
 </head>
 <body>
-
+<h1> Car list </h1>
+<table>
+    <thead>
+    <tr>
+        <th>
+            Модель
+        </th>
+        <th>
+            Год
+        </th>
+        <th>
+            Цвет
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.model}">Модель машины</td>
+        <td th:text="${car.year}">Год</td>
+        <td th:text="${car.getColor}">Цвет></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

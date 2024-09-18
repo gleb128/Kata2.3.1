@@ -8,7 +8,8 @@ import java.util.List;
 @Service
 public class Cars implements CarService  {
     static List<Car> cars = new ArrayList<>();
-    {
+
+    static {
         cars.add(new Car("BMW", 2011, "Red"));
         cars.add(new Car("Audi", 2012, "Blue"));
         cars.add(new Car("Mercedes", 2013, "Black"));
@@ -17,7 +18,11 @@ public class Cars implements CarService  {
     }
 
     @Override
-    public List<Car> listAllCars() {
+    public List<Car> listAllCars(int count) {
+        if (count >= cars.size())
+        {return cars;}
+        cars = cars.stream().limit(count).toList();
         return cars;
     }
+
 }

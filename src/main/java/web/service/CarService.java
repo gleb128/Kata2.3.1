@@ -7,5 +7,5 @@ import java.util.List;
 
 @Service
 public interface CarService {
-    public  List<Car> listAllCars();
+    public  List<Car> listAllCars(int count);
 }
