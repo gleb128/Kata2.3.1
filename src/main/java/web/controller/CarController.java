@@ -23,7 +23,6 @@ public class    CarController {
             count = 5;
         }
         List<Car> cars = carService.listAllCars(count);
-        System.out.println(cars);
         model.addAttribute("cars", cars);
         return "cars";
     }
