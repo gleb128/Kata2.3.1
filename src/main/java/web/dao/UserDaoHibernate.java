@@ -1,11 +1,13 @@
 package web.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Repository
 public class UserDaoHibernate implements Userdao {
@@ -53,6 +55,13 @@ public class UserDaoHibernate implements Userdao {
         User user = entityManager.find(User.class, id);
         entityManager.getTransaction().commit();
         return user;
+    }
+
+    @Override
+    public List<User> findAllUsers() {
+        entityManager.getTransaction().begin();
+        List<User> users = entityManager.createQuery("from User", User.class).getResultList();
+        return users;
     }
 
 
