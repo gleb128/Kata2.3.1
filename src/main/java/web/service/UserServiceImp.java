@@ -35,12 +35,12 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public void deleteUser(Byte id) {
+    public void deleteUser(Long id) {
         userdao.deleteUser(id);
     }
 
     @Override
-    public User findUser(Byte id) {
+    public User findUser(Long id) {
         return userdao.findUser(id);
     }
 

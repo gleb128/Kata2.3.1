@@ -43,14 +43,14 @@ public class UserDaoHibernate implements Userdao {
 
     @Transactional
     @Override
-    public void deleteUser(Byte id) {
+    public void deleteUser(Long id) {
         User user = entityManager.find(User.class, id);
         entityManager.remove(entityManager.contains(user) ? user : entityManager.merge(user));
     }
 
     @Transactional
     @Override
-    public User findUser(Byte id) {
+    public User findUser(Long id) {
         User user = entityManager.find(User.class, id);
         return user;
     }

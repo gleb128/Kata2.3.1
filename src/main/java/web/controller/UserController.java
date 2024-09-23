@@ -30,7 +30,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public String ShowOne(@PathVariable int id, Model model) {
-        model.addAttribute("User", userService.findUser((byte) id));
+        model.addAttribute("User", userService.findUser((long) id));
         return "ShowOne";
     }
 

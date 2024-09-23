@@ -8,7 +8,7 @@ public interface Userdao {
     public void createUsersTable();
     public void saveUser(String name, String lastName, Byte age);
     public void updateUser(String name, String lastName, Byte age);
-    public void deleteUser(Byte id);
-    public User findUser(Byte id);
+    public void deleteUser(Long id);
+    public User findUser(Long id);
     public List<User> findAllUsers();
 }
