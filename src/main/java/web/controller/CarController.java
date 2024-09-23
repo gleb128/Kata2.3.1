@@ -12,7 +12,7 @@ import web.service.Cars;
 import java.util.List;
 
 @Controller
-public class    CarController {
+public class CarController {
 
     @Autowired
     private CarService carService;

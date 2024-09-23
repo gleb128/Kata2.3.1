@@ -5,8 +5,9 @@ import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
-public class Cars implements CarService  {
+public class Cars implements CarService {
     static List<Car> cars = new ArrayList<>();
 
     static {
@@ -19,8 +20,9 @@ public class Cars implements CarService  {
 
     @Override
     public List<Car> listAllCars(int count) {
-        if (count >= cars.size())
-        {return cars;}
+        if (count >= cars.size()) {
+            return cars;
+        }
         cars = cars.stream().limit(count).toList();
         return cars;
     }

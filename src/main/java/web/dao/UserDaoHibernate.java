@@ -1,14 +1,11 @@
 package web.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PostPersist;
 import java.util.List;
 
 
@@ -21,13 +18,13 @@ public class UserDaoHibernate implements Userdao {
     @Transactional
     @Override
     public void createUsersTable() {
-     entityManager.createNativeQuery("CREATE TABLE IF NOT EXISTS users (").executeUpdate();
+        entityManager.createNativeQuery("CREATE TABLE IF NOT EXISTS users (").executeUpdate();
     }
 
     @Transactional
     @Override
-    public void saveUser(String name, String lastName, Byte age) {
-        entityManager.persist(new User(name, lastName, age));
+    public void saveUser(User user) {
+        entityManager.persist(user);
     }
 
     @Transactional

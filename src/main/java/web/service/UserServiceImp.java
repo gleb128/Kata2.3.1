@@ -1,13 +1,8 @@
 package web.service;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import web.dao.UserDaoHibernate;
 import web.dao.Userdao;
 import web.model.User;
-
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
@@ -21,17 +16,17 @@ public class UserServiceImp implements UserService {
 
     @Override
     public void createUsersTable() {
-    userdao.createUsersTable();
+        userdao.createUsersTable();
     }
 
     @Override
-    public void saveUser(String name, String lastName, Byte age) {
-    userdao.saveUser(name, lastName, age);
+    public void saveUser(User user) {
+        userdao.saveUser(user);
     }
 
     @Override
     public void updateUser(String name, String lastName, Byte age) {
-    userdao.updateUser(name, lastName, age);
+        userdao.updateUser(name, lastName, age);
     }
 
     @Override
