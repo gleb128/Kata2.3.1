@@ -21,18 +21,12 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    @GetMapping
+    @GetMapping("/AllUsers")
     public String ShowUsers(Model model) {
         List<User> users = userService.findAllUsers();
-        model.addAttribute("Users", users);
+        model.addAttribute("users", users);
+        System.out.println("Users list size: " + users.size());
         return "ShowUsers";
     }
-
-    @GetMapping("/{id}")
-    public String ShowOne(@PathVariable int id, Model model) {
-        model.addAttribute("User", userService.findUser((long) id));
-        return "ShowOne";
-    }
-
 
 }

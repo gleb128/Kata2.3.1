@@ -48,10 +48,7 @@ public class UserServiceImp implements UserService {
     public List<User> findAllUsers() {
         return userdao.findAllUsers();
     }
-    @Transactional
-    @PostConstruct
-    public void init() {
-        userdao.saveUser("Jo231hn", "D132oe", (byte) 30);
-        userdao.saveUser("Jane", "Do23e", (byte) 25);
-    }
+
 }
+
+

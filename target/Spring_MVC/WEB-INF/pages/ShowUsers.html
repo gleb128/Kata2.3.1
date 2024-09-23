@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>List of Users</title>
+    <title>Users List</title>
+    <style>
+        table {
+            width: 30%;
+            border-collapse: collapse;
+            margin: 5px 0;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 3px;
+            text-align: left;
+        }
+        th {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h1>List of Users</h1>
-<div th:if="${users.empty}">
-    <p>No users found.</p>
-</div>
-<ul th:if="${not #lists.isEmpty(users)}">
-    <li th:each="user : ${users}">
-        <span th:text="${user.name}">User Name</span> - <span th:text="${user.age}">User Age</span>
-    </li>
-</ul>
+<h1>Users List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>LastName</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}">id</td>
+        <td th:text="${user.name}">name</td>
+        <td th:text="${user.lastName}">LastName</td>
+        <td th:text="${user.age}">age</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
