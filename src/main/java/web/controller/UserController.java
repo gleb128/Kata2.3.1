@@ -6,7 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import web.model.User;
 import web.service.UserService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/Users")
@@ -19,15 +22,16 @@ public class UserController {
         this.userService = userService;
     }
     @GetMapping
-    public String index(Model model) {
-        model.addAttribute("Users", userService.findAllUsers());
-        return "index";
+    public String ShowUsers(Model model) {
+        List<User> users = userService.findAllUsers();
+        model.addAttribute("Users", users);
+        return "ShowUsers";
     }
 
     @GetMapping("/{id}")
-    public String show(@PathVariable int id, Model model) {
+    public String ShowOne(@PathVariable int id, Model model) {
         model.addAttribute("User", userService.findUser((byte) id));
-        return "show";
+        return "ShowOne";
     }
 
 
