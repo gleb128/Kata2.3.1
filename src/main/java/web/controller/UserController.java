@@ -30,8 +30,6 @@ public class UserController {
     }
     @RequestMapping("/addNewUser")
     public String addNewUser(Model model) {
-
-        User user = new User();
         model.addAttribute("user", new User());
         return "userForm";
     }
