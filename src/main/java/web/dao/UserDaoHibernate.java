@@ -27,16 +27,6 @@ public class UserDaoHibernate implements Userdao {
         entityManager.persist(user);
     }
 
-    @Transactional
-    @Override
-    public void updateUser(String name, String lastName, Byte age) {
-        User user = entityManager.find(User.class, name);
-        if (user != null) {
-            user.setName(name);
-            user.setLastName(lastName);
-            user.setAge(age);
-        }
-    }
 
     @Transactional
     @Override

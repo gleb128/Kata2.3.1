@@ -37,6 +37,12 @@
         <td th:text="${user.name}">name</td>
         <td th:text="${user.lastName}">LastName</td>
         <td th:text="${user.age}">age</td>
+        <td> <form th:action="@{/Users/delete(id=${user.id})}" method="post">
+        <input type="submit" value="Delete" />
+    </form>
+         <form th:action="@{/Users/edit/{id}(id=${user.id})}" method="post">
+            <input type="submit" value="Edit" ONCLICK="window.location.href = 'EditUser'" />
+        </form> </td>
     </tr>
     </tbody>
 </table>
@@ -45,12 +51,6 @@
 <input type = "button" value="Add"
         ONCLICK="window.location.href = 'addNewUser'">
 <br>
-<input type="button" value="Remove"
-    ONCLICK="window.location.href = 'removeUser'"
->
-
-
-
 
 </body>
 </html>
