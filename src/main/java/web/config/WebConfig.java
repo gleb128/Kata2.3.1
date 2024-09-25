@@ -23,8 +23,6 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
 
-
-
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
