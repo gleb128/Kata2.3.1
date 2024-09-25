@@ -42,6 +42,7 @@ public class UserDaoHibernate implements Userdao {
         List<User> users = entityManager.createQuery("from User", User.class).getResultList();
         return users;
     }
+
     @Transactional
     @Override
     public void updateUser(User user) {
