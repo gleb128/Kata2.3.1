@@ -12,7 +12,9 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
 import javax.persistence.EntityManagerFactory;
 import java.util.Properties;
 

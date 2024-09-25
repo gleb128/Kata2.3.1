@@ -5,7 +5,6 @@ import web.model.User;
 import java.util.List;
 
 public interface Userdao {
-    void createUsersTable();
 
     void saveUser(User user);
 
@@ -14,4 +13,6 @@ public interface Userdao {
     User findUser(Long id);
 
     List<User> findAllUsers();
+
+    void updateUser(User user);
 }

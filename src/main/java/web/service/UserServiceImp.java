@@ -15,11 +15,6 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public void createUsersTable() {
-        userdao.createUsersTable();
-    }
-
-    @Override
     public void saveUser(User user) {
         userdao.saveUser(user);
     }
@@ -37,6 +32,11 @@ public class UserServiceImp implements UserService {
     @Override
     public List<User> findAllUsers() {
         return userdao.findAllUsers();
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userdao.updateUser(user);
     }
 
 }

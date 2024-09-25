@@ -1,4 +1,5 @@
 package web.model;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +18,8 @@ public class User {
     @Column
     private Byte age;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String name, String lastName, Byte age) {
         this.name = name;

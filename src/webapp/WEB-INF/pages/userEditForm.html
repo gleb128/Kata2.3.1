@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User edit form</title>
-</head>
-<body>
-<h2>User form</h2>
-<form th:action="@{/Users/saveNewUser}" th:object="${user}" method="post">
-    Name: <input type="text" th:field="*{name}" />
-    <br><br>
-    Last name: <input type="text" th:field="*{lastName}" />
-    <br><br>
-    Age: <input type="text" th:field="*{age}" />
-    <br><br>
-    <input type="submit" value="OK" />
+<h2>Edit User Form</h2>
+<form th:action="@{/Users/updateUser}" th:object="${user}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Name: <input type="text" th:field="*{name}" /></label><br/>
+    <label>Last name: <input type="text" th:field="*{lastName}" /></label><br/>
+    <label>Age: <input type="text" th:field="*{age}" /></label><br/>
+    <input type="submit" value="OK"/>
 </form>
-</body>
-</html>

@@ -17,12 +17,6 @@ public class UserDaoHibernate implements Userdao {
 
     @Transactional
     @Override
-    public void createUsersTable() {
-        entityManager.createNativeQuery("CREATE TABLE IF NOT EXISTS users (").executeUpdate();
-    }
-
-    @Transactional
-    @Override
     public void saveUser(User user) {
         entityManager.persist(user);
     }
@@ -47,6 +41,11 @@ public class UserDaoHibernate implements Userdao {
     public List<User> findAllUsers() {
         List<User> users = entityManager.createQuery("from User", User.class).getResultList();
         return users;
+    }
+    @Transactional
+    @Override
+    public void updateUser(User user) {
+        entityManager.merge(user);
     }
 
 
